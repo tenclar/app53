@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
@@ -12,36 +12,49 @@ import {
   QuButtonText,
 } from './styles';
 
-export default function Main() {
-  return (
-    <>
-      <Container>
-        <ButtonGroupCheck>
-          <QuButton>
-            <QuButtonText>Desafio LOL Nivel 1</QuButtonText>
-          </QuButton>
-          <QuButton>
-            <QuButtonText>Desafio FORT Nivel 1</QuButtonText>
-          </QuButton>
-          <QuButton>
-            <QuButtonText>Desafio FORT Nivel 2</QuButtonText>
-          </QuButton>
-        </ButtonGroupCheck>
-      </Container>
-      <ButtonGroup>
-        <HomeButton>
-          <Icon name="home" size={60} color="#FFF" />
-        </HomeButton>
-        <QuestButton>
-          <Icon name="assignment-late" size={60} color="#FFF" />
-        </QuestButton>
-        <PerfilButton>
-          <Icon name="group" size={60} color="#FFF" />
-        </PerfilButton>
-      </ButtonGroup>
-    </>
-  );
+export default class Main extends Component {
+  static navigationOptions = ({navigation}) => ({
+    title: 'I-LogiQuest',
+  });
+
+  render() {
+    const {navigation} = this.props;
+    return (
+      <>
+        <Container>
+          <ButtonGroupCheck>
+            <QuButton>
+              <QuButtonText>Desafio LOL Nivel 1</QuButtonText>
+            </QuButton>
+            <QuButton>
+              <QuButtonText>Desafio FORT Nivel 1</QuButtonText>
+            </QuButton>
+            <QuButton>
+              <QuButtonText>Desafio FORT Nivel 2</QuButtonText>
+            </QuButton>
+          </ButtonGroupCheck>
+        </Container>
+        <ButtonGroup>
+          <HomeButton
+            onPress={() => {
+              navigation.navigate('Main');
+            }}>
+            <Icon name="home" size={60} color="#FFF" />
+          </HomeButton>
+          <QuestButton
+            onPress={() => {
+              navigation.navigate('Quest');
+            }}>
+            <Icon name="assignment-late" size={60} color="#FFF" />
+          </QuestButton>
+          <PerfilButton
+            onPress={() => {
+              navigation.navigate('User');
+            }}>
+            <Icon name="group" size={60} color="#FFF" />
+          </PerfilButton>
+        </ButtonGroup>
+      </>
+    );
+  }
 }
-Main.navigationOptions = {
-  title: 'I-LogiQuest',
-};

@@ -5,7 +5,7 @@ import {Container, Header, Avatar, Name, Bio} from './styles';
 
 export default class User extends Component {
   static navigationOptions = ({navigation}) => ({
-    title: navigation.getParam('user').name,
+    title: 'Usuário',
   });
 
   static propTypes = {
@@ -18,12 +18,10 @@ export default class User extends Component {
   render() {
     const {navigation} = this.props;
 
-    const user = navigation.getParam('user');
-
     return (
       <Container>
         <Header>
-          <Avatar source={{uri: user.avatar}} />
+          <Avatar />
           <Name>@User_Name</Name>
           <Bio>@Exp</Bio>
         </Header>

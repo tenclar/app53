@@ -1,18 +1,44 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import IconFontAwesome from 'react-native-vector-icons/FontAwesome5';
-import {Container, ButtonGroup, HomeButton, PerfilButton} from './styles';
+
+import {
+  Container,
+  Containerq,
+  ButtonGroup,
+  HomeButton,
+  ButtonGroupCheck,
+  ButtonText,
+  QuButton,
+  PerfilButton,
+} from './styles';
 
 export default function Main() {
   return (
     <>
-      <Container />
+      <Containerq>
+        <ButtonText>
+          O fazendeiro tinha 15 ovelhas e todas, exceto 8, morreram. Quantas
+          sobraram?
+        </ButtonText>
+      </Containerq>
+      <Container>
+        <ButtonGroupCheck>
+          <QuButton>
+            <ButtonText>1</ButtonText>
+          </QuButton>
+          <QuButton>
+            <ButtonText>2</ButtonText>
+          </QuButton>
+          <QuButton>
+            <ButtonText>3</ButtonText>
+          </QuButton>
+        </ButtonGroupCheck>
+      </Container>
       <ButtonGroup>
         <HomeButton>
-          <Icon name="home" size={60} color="#FFF" />
+          <ButtonText>anterior</ButtonText>
         </HomeButton>
         <PerfilButton>
-          <IconFontAwesome name="book-reader" size={60} color="#FFF" />
+          <ButtonText>Próximo</ButtonText>
         </PerfilButton>
       </ButtonGroup>
     </>
