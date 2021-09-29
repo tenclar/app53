@@ -10,7 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "npm": "^6.13.1",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
